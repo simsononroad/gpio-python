@@ -12,6 +12,7 @@ def time():
     current_dateTime = datetime.now()
     display.print(f"{current_dateTime.hour}:{current_dateTime.minute}")
     sleep(30)
+    display.print("")
     
 def temp():
     lekerdez = requests.get(f'https://api.openweathermap.org/data/2.5/weather?q=pécel&appid=a3c3ac028697416ece9bd3c3a7c0f500&units=metric')
