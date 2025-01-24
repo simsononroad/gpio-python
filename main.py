@@ -17,10 +17,14 @@ def time():
 def temp():
     lekerdez = requests.get(f'https://api.openweathermap.org/data/2.5/weather?q=pécel&appid=a3c3ac028697416ece9bd3c3a7c0f500&units=metric')
     jsonformatum = json.loads(lekerdez.text)
-    display.print(f"--{round(jsonformatum['main']['temp'])}C")
+    test = 12.4
+    if len(round(test)) == 1:
+        display.print(f"--{round(jsonformatum['main']['temp'])}C")
+    elif len(round(test)) == 2:
+        display.print(f"-{round(jsonformatum['main']['temp'])}C")
     print(round(jsonformatum['main']['temp']))
     sleep(10)
-    
+    #jsonformatum['main']['temp']
 def main():
     while True:
         time()
