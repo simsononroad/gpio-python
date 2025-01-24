@@ -20,4 +20,10 @@ def temp():
     print(round(jsonformatum['main']['temp']))
     sleep(30)
     
-temp()
+def main():
+    while True:
+        time()
+        temp()
+
+if __name__ == "__main__":
+    main()
