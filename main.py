@@ -11,7 +11,9 @@ display = BigSeg7x4(i2c)
 def time():
     current_dateTime = datetime.now()
     display.print(f"{current_dateTime.hour}:{current_dateTime.minute}")
+    print(f"{current_dateTime.hour}:{current_dateTime.minute}")
     sleep(10)
+    
     
     
 def temp():
