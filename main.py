@@ -11,20 +11,20 @@ display = BigSeg7x4(i2c)
 def time():
     current_dateTime = datetime.now()
     display.print(f"{current_dateTime.hour}:{current_dateTime.minute}")
-    sleep(1)
+    sleep(10)
     display.print("")
     
 def temp():
     lekerdez = requests.get(f'https://api.openweathermap.org/data/2.5/weather?q=pécel&appid=a3c3ac028697416ece9bd3c3a7c0f500&units=metric')
     jsonformatum = json.loads(lekerdez.text)
-    test = 8.3
-    test = round(test)
-    test = str(test)
+    temp = jsonformatum['main']['temp']
+    temp = round(temp)
+    temp = str(temp)
     #print(type(jsonformatum['main']['temp']))
-    print(f"{test} | {len(test)}")
-    if len(test) == 1:
+    print(f"{temp} | {len(temp)}")
+    if len(temp) == 1:
         display.print(f"--{round(jsonformatum['main']['temp'])}C")
-    elif len(test) == 2:
+    elif len(temp) == 2:
         display.print(f"-{round(jsonformatum['main']['temp'])}C")
     #print(round(jsonformatum['main']['temp']))
     sleep(10)
