@@ -17,6 +17,6 @@ def temp():
     lekerdez = requests.get(f'https://api.openweathermap.org/data/2.5/weather?q=pécel&appid=a3c3ac028697416ece9bd3c3a7c0f500&units=metric')
     jsonformatum = json.loads(lekerdez.text)
     display.print(f"{jsonformatum['main']['temp']}C")
-    print(jsonformatum['main']['temp'])
+    print(round(jsonformatum['main']['temp']))
     sleep(30)
     
