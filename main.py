@@ -23,7 +23,7 @@ def temp():
     print(type(jsonformatum['main']['temp']))
     if len(test) == 1:
         display.print(f"--{round(jsonformatum['main']['temp'])}C")
-    elif len(round(str(test))) == 2:
+    elif len(test) == 2:
         display.print(f"-{round(jsonformatum['main']['temp'])}C")
     print(round(jsonformatum['main']['temp']))
     sleep(10)
