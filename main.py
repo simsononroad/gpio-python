@@ -21,6 +21,7 @@ def temp():
     test = round(test)
     test = str(test)
     print(type(jsonformatum['main']['temp']))
+    print(len(test))
     if len(test) == 1:
         display.print(f"--{round(jsonformatum['main']['temp'])}C")
     elif len(test) == 2:
