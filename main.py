@@ -43,7 +43,9 @@ try:
     if __name__ == "__main__":
         main()
 except KeyboardInterrupt:
+    display.marquee('Kilépettél', 0.1)
     display.fill(0)
-    display.show()
+    import os
+    os.system('clear')
     print("Program leállítva")
     exit()
