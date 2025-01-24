@@ -20,13 +20,13 @@ def temp():
     test = 12.3
     test = round(test)
     test = str(test)
-    print(type(jsonformatum['main']['temp']))
-    print(len(test))
+    #print(type(jsonformatum['main']['temp']))
+    print(f"{test} | {len(test)}")
     if len(test) == 1:
         display.print(f"--{round(jsonformatum['main']['temp'])}C")
     elif len(test) == 2:
         display.print(f"-{round(jsonformatum['main']['temp'])}C")
-    print(round(jsonformatum['main']['temp']))
+    #print(round(jsonformatum['main']['temp']))
     sleep(10)
     #jsonformatum['main']['temp']
 def main():
