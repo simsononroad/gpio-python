@@ -13,7 +13,8 @@ def time():
     current_dateTime.minute = str(current_dateTime.minute)
     if len(current_dateTime.minute) == 1:
         current_dateTime.minute = f"0{current_dateTime.minute}"
-    display.print(f"{current_dateTime.hour}:{current_dateTime.minute}")
+    else:
+        display.print(f"{current_dateTime.hour}:{current_dateTime.minute}")
     print(f"{current_dateTime.hour}:{current_dateTime.minute}")
     sleep(10)
     
