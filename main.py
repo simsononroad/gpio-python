@@ -10,9 +10,10 @@ display = BigSeg7x4(i2c)
 
 def time():
     current_dateTime = datetime.now()
-    min = str(current_dateTime.minute)
+    a = 3
+    min = str(a)
     if len(min) == 1:
-        current_dateTime.minute = f"0{current_dateTime.minute}"
+        display.print(f"{current_dateTime.hour}:0{min}")
     else:
         display.print(f"{current_dateTime.hour}:{current_dateTime.minute}")
     print(f"{current_dateTime.hour}:{current_dateTime.minute}")
