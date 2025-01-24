@@ -10,8 +10,8 @@ display = BigSeg7x4(i2c)
 
 def time():
     current_dateTime = datetime.now()
-    a = 3
-    min = str(a)
+
+    min = str(current_dateTime.minute)
     if len(min) == 1:
         display.print(f"{current_dateTime.hour}:0{min}")
     else:
@@ -29,9 +29,9 @@ def temp():
     temp = str(temp)
     #print(type(jsonformatum['main']['temp']))
     if len(temp) == 1:
-        display.print(f"--{round(jsonformatum['main']['temp'])}C")
+        display.print(f"||{round(jsonformatum['main']['temp'])}C")
     elif len(temp) == 2:
-        display.print(f"-{round(jsonformatum['main']['temp'])}C")
+        display.print(f"|{round(jsonformatum['main']['temp'])}C")
     #print(round(jsonformatum['main']['temp']))
     sleep(10)
     #jsonformatum['main']['temp']
