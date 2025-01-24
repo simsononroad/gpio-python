@@ -20,3 +20,4 @@ def temp():
     print(round(jsonformatum['main']['temp']))
     sleep(30)
     
+temp()
