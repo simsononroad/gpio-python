@@ -43,7 +43,8 @@ try:
     if __name__ == "__main__":
         main()
 except KeyboardInterrupt:
-    display.marquee('quit', 1, False)
+    display.print('quit')
+    sleep(3)
     display.fill(0)
     import os
     os.system('clear')
