@@ -5,10 +5,21 @@ try:
     from datetime import datetime
     import requests
     import json
+    import RPi.GPIO as GPIO
+    
+    GPIO.setwarnings(False) # Ignore warning for now
+    GPIO.setmode(GPIO.BOARD) # Use physical pin numbering
+    GPIO.setup(10, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
+    
 
     i2c = board.I2C()
     display = BigSeg7x4(i2c)
 
+    while True: # Run forever
+        if GPIO.input(10) == GPIO.HIGH:
+            print("Button was pushed!")
+            break
+    
     def time():
         current_dateTime = datetime.now()
 
