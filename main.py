@@ -60,6 +60,7 @@ try:
             elif mode == 1:
                 print("temp")
                 temp()
+            print(mode)
                 
 
     if __name__ == "__main__":
