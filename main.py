@@ -25,7 +25,6 @@ try:
             display.print(f"{current_dateTime.hour}:0{min}")
         else:
             display.print(f"{current_dateTime.hour}:{current_dateTime.minute}")
-        sleep(10)
         
         
         
@@ -41,7 +40,6 @@ try:
         elif len(temp) == 2:
             display.print(f"|{round(jsonformatum['main']['temp'])}C")
         #print(round(jsonformatum['main']['temp']))
-        sleep(10)
         #jsonformatum['main']['temp']
         
             
