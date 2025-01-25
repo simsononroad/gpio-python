@@ -48,7 +48,7 @@ try:
         global mode
         global button_pressed
         while True:
-            if GPIO.input(18) == GPIO.LOW:
+            if GPIO.input(18) == GPIO.HIGH:
                 button_pressed += 1
                 
             if button_pressed == 0:
