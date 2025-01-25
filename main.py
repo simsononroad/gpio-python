@@ -12,6 +12,7 @@ try:
     GPIO.setup(18, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
     
     mode = 0
+    button_pressed = 0
 
     i2c = board.I2C()
     display = BigSeg7x4(i2c)
@@ -45,21 +46,19 @@ try:
             
     def main():
         global mode
+        global button_pressed
         while True:
             if GPIO.input(18) == GPIO.LOW:
-                if mode == 0 or mode == 2:
-                    mode = 1
-                    print("mode: 1")
-                elif mode == 1:
-                    mode = 0
-                    print("mode: 0")
+                button_pressed += 1
                 
-            if mode == 0:
+            if button_pressed == 0:
                 print("time")
                 time()
-            elif mode == 1:
+                button_pressed = 0
+            elif button_pressed == 1:
                 print("temp")
                 temp()
+                button_pressed = 0
             print(mode)
                 
 
