@@ -52,15 +52,21 @@ try:
                 change_mode()                
 
     def change_mode():
+        global mode
         if mode == "time":
             mode = "temp"
+        
         elif mode == "temp":
             mode = "time"
+        display_mode()
     def display_mode():
+        global mode
         if mode == "time":
             time()
         elif mode == "temp":
             temp()
+        
+        
 
     if __name__ == "__main__":
         main()
