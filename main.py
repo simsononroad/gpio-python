@@ -11,14 +11,11 @@ try:
     #GPIO.setmode(GPIO.BOARD) # Use physical pin numbering
     GPIO.setup(18, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
     
+    mode = 0
 
     i2c = board.I2C()
     display = BigSeg7x4(i2c)
-
-    while True: # Run forever
-        if GPIO.input(18) == GPIO.HIGH:
-            print("Button was pushed!")
-            break
+    
     
     def time():
         current_dateTime = datetime.now()
@@ -46,10 +43,22 @@ try:
         #print(round(jsonformatum['main']['temp']))
         sleep(10)
         #jsonformatum['main']['temp']
+        
+            
     def main():
+        global mode
         while True:
-            time()
-            temp()
+            if GPIO.input(18) == GPIO.HIGH:
+                if mode == 0:
+                    mode = 1
+                elif mode == 1:
+                    mode = 0
+                break
+            if mode == 0:
+                time()
+            elif mode == 1:
+                temp()
+                
 
     if __name__ == "__main__":
         main()
