@@ -11,7 +11,7 @@ try:
     #GPIO.setmode(GPIO.BOARD) # Use physical pin numbering
     GPIO.setup(18, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
     
-    mode = 2
+    mode = 0
 
     i2c = board.I2C()
     display = BigSeg7x4(i2c)
