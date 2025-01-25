@@ -9,7 +9,7 @@ try:
     
     GPIO.setwarnings(False) # Ignore warning for now
     #GPIO.setmode(GPIO.BOARD) # Use physical pin numbering
-    GPIO.setup(10, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
+    GPIO.setup(18, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
     
 
     i2c = board.I2C()
