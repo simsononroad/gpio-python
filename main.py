@@ -16,7 +16,7 @@ try:
     display = BigSeg7x4(i2c)
 
     while True: # Run forever
-        if GPIO.input(10) == GPIO.HIGH:
+        if GPIO.input(18) == GPIO.HIGH:
             print("Button was pushed!")
             break
     
