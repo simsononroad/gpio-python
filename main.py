@@ -11,7 +11,7 @@ try:
     #GPIO.setmode(GPIO.BOARD) # Use physical pin numbering
     GPIO.setup(18, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
     
-    mode = None
+    mode = 2
 
     i2c = board.I2C()
     display = BigSeg7x4(i2c)
@@ -47,7 +47,7 @@ try:
         global mode
         while True:
             if GPIO.input(18) == GPIO.HIGH:
-                if mode == 0:
+                if mode == 0 or mode == 2:
                     mode = 1
                     print("mode: 1")
                 elif mode == 1:
