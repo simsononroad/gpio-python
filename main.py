@@ -46,7 +46,7 @@ try:
     def main():
         global mode
         while True:
-            if GPIO.input(18) == GPIO.HIGH:
+            if GPIO.input(18) == GPIO.LOW:
                 if mode == 0 or mode == 2:
                     mode = 1
                     print("mode: 1")
