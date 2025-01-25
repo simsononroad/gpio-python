@@ -53,10 +53,12 @@ try:
                     mode = 1
                 elif mode == 1:
                     mode = 0
-                break
+                
             if mode == 0:
+                print("time")
                 time()
             elif mode == 1:
+                print("temp")
                 temp()
                 
 
