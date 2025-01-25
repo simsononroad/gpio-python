@@ -50,7 +50,7 @@ try:
                 if mode == 0:
                     mode = 1
                     print("mode: 1")
-                if mode == 1:
+                elif mode == 1:
                     mode = 0
                     print("mode: 0")
                 
