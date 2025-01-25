@@ -59,7 +59,7 @@ try:
                 print("temp")
                 temp()
                 button_pressed = 0
-            print(mode)
+            print(button_pressed)
                 
 
     if __name__ == "__main__":
