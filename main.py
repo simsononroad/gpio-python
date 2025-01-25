@@ -11,7 +11,7 @@ try:
     #GPIO.setmode(GPIO.BOARD) # Use physical pin numbering
     GPIO.setup(18, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
     
-    mode = 0
+    mode = "time"
     button_pressed = 0
 
     i2c = board.I2C()
@@ -49,18 +49,18 @@ try:
         global button_pressed
         while True:
             if GPIO.input(18) == GPIO.HIGH:
-                button_pressed += 1
-                
-            if button_pressed == 0:
-                print("time")
-                time()
-                button_pressed = 0
-            elif button_pressed == 1:
-                print("temp")
-                temp()
-                button_pressed = 0
-            print(button_pressed)
-                
+                change_mode()                
+
+    def change_mode():
+        if mode == "time":
+            mode = "temp"
+        elif mode == "temp":
+            mode = "time"
+    def display_mode():
+        if mode == "time":
+            time()
+        elif mode == "temp":
+            temp()
 
     if __name__ == "__main__":
         main()
